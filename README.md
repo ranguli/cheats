@@ -17,14 +17,16 @@ want to delete a branch just for the sake of recreating an up to date branch of 
 
 ```git fetch origin && git reset --hard origin/master && git clean -f -d ```
 
-Optionally, checkout the branch you were working on:
-``` git checkout mybranch && git pull && git clean -f -d```
 
 ## Other
 
 ### 4. Completely reset a local repo without having to reclone 
 
 ```git branch -d branch && git push origin -d branch ```
+
+Optionally, checkout (an equally squeaky-clean version of) the branch you were trying to work on before the Gods had forsaken you:
+
+``` git checkout mybranch && git pull && git clean -f -d```
 
 ### 5. Add a submodule to your repository
 After doing this you'll always want to clone your repository recursively using ``` git clone -r``` in order to 
