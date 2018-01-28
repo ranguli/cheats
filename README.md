@@ -15,14 +15,14 @@ want to delete a branch just for the sake of recreating an up to date branch of 
 
 ### 3. Remove a branch locally _and_ remotely 
 
-```git fetch origin && git reset --hard origin/master && git clean -f -d ```
+```git branch -d branch && git push origin -d branch ```
 
 
 ## Other
 
 ### 4. Completely reset a local repo without having to reclone 
 
-```git branch -d branch && git push origin -d branch ```
+```git fetch origin && git reset --hard origin/master && git clean -f -d ```
 
 Optionally, checkout (an equally squeaky-clean version of) the branch you were trying to work on before the Gods had forsaken you:
 
