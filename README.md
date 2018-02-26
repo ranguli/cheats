@@ -1,10 +1,16 @@
- A collection of useful commands I've come to use often. 
-
+# cheats
+A collection of useful commands I've come to use often. 
 
 ## Linux
 #### Printing
+
 ##### 1. Find a network printer even if it isn't installed
 ``` systemctl start avahi-daemon && avahi-browse -a | grep Printer ``` 
+#### Clipboard
+
+##### 1. Copy the contents of a text file into your clipbaord
+``` xclip -sel c < file.txt ```
+
 
 ## Git
 #### Working with Branches
