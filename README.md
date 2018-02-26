@@ -32,7 +32,17 @@ Optionally, checkout (an equally squeaky-clean version of) the branch you were t
 After doing this you'll always want to clone your repository recursively using ``` git clone -r``` in order to 
 clone your submodules as well. 
 
-``` git submodule add https://github.com/chaconinc/DbConnector
+``` 
+    git submodule add https://github.com/chaconinc/DbConnector
+    git submodule init
+    git submodule update
+```
+
+### 6. Syncing submodules if you forgot to clone recursively
+
+Sometimes you forget to use the `--recursive` flag while cloning, or you didn't think the repo had submodules. You can setup the submodules without recloning 
+
+``` 
     git submodule init
     git submodule update
 ```
