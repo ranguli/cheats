@@ -39,6 +39,9 @@ Optionally, checkout (an equally squeaky-clean version of) the branch you were t
 
 ``` git checkout mybranch && git pull && git clean -f -d```
 
+
+#### Submodules
+
 ##### 5. Add a submodule to your repository
 After doing this you'll always want to clone your repository recursively using ``` git clone -r``` in order to 
 clone your submodules as well. 
@@ -58,3 +61,14 @@ Sometimes you forget to use the `--recursive` flag while cloning, or you didn't 
     git submodule update
 ```
 
+#### Forks
+
+##### 7. Keeping a fork up to date
+
+Forks are the backbone of collaboration on GitHub! If you maintain a fork of a project for long enough that you need to sync with it's upstream, repo look no further:
+
+``` git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git ```
+
+Then verify it worked with:
+
+``` git remote -v ```
