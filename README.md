@@ -67,8 +67,14 @@ Sometimes you forget to use the `--recursive` flag while cloning, or you didn't 
 
 Forks are the backbone of collaboration on GitHub! If you maintain a fork of a project for long enough that you need to sync with it's upstream, repo look no further:
 
+First, add the fork as up origin:
+
 ``` git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git ```
 
 Then verify it worked with:
 
 ``` git remote -v ```
+
+Then merge with:
+
+``` git merge upstream/master```
