@@ -78,3 +78,15 @@ Then verify it worked with:
 Then merge with:
 
 ``` git merge upstream/master```
+
+#### Diff Strategies
+
+##### 8. Comparing a local file to it's remote counterpart:
+
+First make sure you have fetched the details from remote:
+
+``` git fetch origin master ```
+
+Then compare your two files:
+
+``` git diff FETCH_HEAD -- yourfile.py ```
