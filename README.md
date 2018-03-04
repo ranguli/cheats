@@ -11,6 +11,22 @@ A collection of useful commands I've come to use often.
 ##### 1. Copy the contents of a text file into your clipbaord
 ``` xclip -sel c < file.txt ```
 
+#### GNU wget
+
+##### 1. Downloading multiples files
+
+``` 
+# Add our URLs in to a file list. Makes a nice backup/manifest too.
+(
+echo www.urlfromclipboard.com/1
+echo www.urlfromclipboard.com/2
+echo www.urlfromclipboard.com/3
+)>"shoppinglist.txt"
+pause
+
+# Point wget to our URL list
+wget -i shoppinglist.txt
+```
 
 ## Git
 #### Working with Branches
