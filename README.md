@@ -28,6 +28,17 @@ pause
 wget -i shoppinglist.txt
 ```
 
+## Python & Pip
+#### Pip
+##### 1. Installing a pip package so that it actually installs an executable
+Sometimes ```pip install``` or ```pip install -U``` doesn't cut it and you aren't 
+provided with an actual executable. Run:
+
+``` sudo pip install --prefix /usr/local packagename ```
+
+Now if you run ``` which packagename``` you should actually see it installed
+in a globally accessible place. 
+
 ## Git
 #### Working with Branches
 ##### 1. Take an outdated branch and force it to be up to date with a new one
