@@ -1,6 +1,29 @@
 # cheats
 A collection of useful commands I've come to use often. 
 
+## GPG
+
+### Trusting a GPG key after importing it from one machine to another
+
+```
+gpg --edit-key <KEY_ID>
+gpg> trust
+```
+
+## aws-vault
+
+A great example from the aws-vault [repo](https://github.com/99designs/aws-vault) illustrating just how convenient a tool it is.
+
+```
+$ aws-vault exec home -- env | grep AWS
+AWS_VAULT=home
+AWS_REGION=us-east-1
+AWS_ACCESS_KEY_ID=%%%
+AWS_SECRET_ACCESS_KEY=%%%
+AWS_SESSION_TOKEN=%%%
+AWS_SECURITY_TOKEN=%%%
+```
+
 ## Linux
 #### Printing
 
