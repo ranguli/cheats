@@ -10,6 +10,14 @@ gpg --edit-key <KEY_ID>
 gpg> trust
 ```
 
+## Docker
+
+Get a bash shell for a running container
+
+```
+docker exec -it CONTAINER_ID /bin/sh
+```
+
 ## aws-vault
 
 A great example from the aws-vault [repo](https://github.com/99designs/aws-vault) illustrating just how convenient a tool it is.
