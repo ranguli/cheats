@@ -106,9 +106,7 @@ git submodule init
 git submodule update
 ```
 
-Syncing submodules if you forgot to clone recursively
-
-- Sometimes you forget to use the `--recursive` flag while cloning, or you didn't think the repo had submodules. You can setup the submodules without recloning 
+- Syncing submodules if you forgot to clone recursively (by using `--recursive`). You can setup the submodules without recloning 
 ``` 
 git submodule init
 git submodule update
