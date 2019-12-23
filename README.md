@@ -96,17 +96,14 @@ git fetch origin && git reset --hard origin/master && git clean -f -d
 git checkout mybranch && git pull && git clean -f -d # Optionally checkout a clean version of the branch
 ```
 
-Add a submodule to your repository
-
-- After doing this you'll always want to clone your repository recursively using ``` git clone -r``` in order to 
-clone your submodules as well. 
+- Add a submodule to your repository (in future, clone this repo with `--recursive`).
 ``` 
 git submodule add https://github.com/chaconinc/DbConnector
 git submodule init
 git submodule update
 ```
 
-- Syncing submodules if you forgot to clone recursively (by using `--recursive`). You can setup the submodules without recloning 
+- Syncing submodules if you forgot to clone using `--recursive`. You can setup the submodules without recloning 
 ``` 
 git submodule init
 git submodule update
