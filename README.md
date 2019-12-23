@@ -1,24 +1,33 @@
 # cheats
 A collection of useful commands I've come to use often. 
 
-## SSH
+### SSH
 
-### Regenerating a public key from a private key
+Regenerating a public key from a private key
 ```bash
 chmod 400 ~/.ssh/id_rsa # If you haven't done so already
 ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
 ```
 
-## GPG
+### Hugo
+Getting up and running from a new machine
 
-### Trusting a GPG key after importing it from one machine to another
+```bash
+git clone git@github.com:ranguli/blog.joshmurphy.ca
+cd blog.joshmurphy.ca
+hugo server -D
+```
+
+### GPG
+
+Trusting a GPG key after importing it from one machine to another
 
 ```
 gpg --edit-key <KEY_ID>
 gpg> trust
 ```
 
-## Docker
+### Docker
 
 Get a bash shell for a running container
 
@@ -26,7 +35,7 @@ Get a bash shell for a running container
 docker exec -it CONTAINER_ID /bin/sh
 ```
 
-## aws-vault
+### aws-vault
 
 A great example from the aws-vault [repo](https://github.com/99designs/aws-vault) illustrating just how convenient a tool it is.
 
@@ -40,19 +49,19 @@ AWS_SESSION_TOKEN=%%%
 AWS_SECURITY_TOKEN=%%%
 ```
 
-## Linux
-#### Printing
+### Linux
 
-##### 1. Find a network printer even if it isn't installed
+Find a network printer even if it isn't installed
+
 ``` systemctl start avahi-daemon && avahi-browse -a | grep Printer ``` 
-#### Clipboard
 
-##### 1. Copy the contents of a text file into your clipbaord
+Copy the contents of a text file into your clipbaord
+
 ``` xclip -sel c < file.txt ```
 
-#### GNU wget
+### GNU wget
 
-##### 1. Downloading multiples files
+Downloading multiples files
 
 ``` 
 # Add our URLs in to a file list. Makes a nice backup/manifest too.
@@ -67,9 +76,10 @@ pause
 wget -i shoppinglist.txt
 ```
 
-## Python & Pip
-#### Pip
-##### 1. Installing a pip package so that it actually installs an executable
+## Pip
+
+Installing a pip package so that it actually installs an executable
+
 Sometimes ```pip install``` or ```pip install -U``` doesn't cut it and you aren't 
 provided with an actual executable. Run:
 
@@ -79,25 +89,26 @@ Now if you run ``` which packagename``` you should actually see it installed
 in a globally accessible place. 
 
 ## Git
-#### Working with Branches
-##### 1. Take an outdated branch and force it to be up to date with a new one
+
+Take an outdated branch and force it to be up to date with a new one
 
 (For when you don't care about any of the changes in the out of date branch and don't 
 want to delete a branch just for the sake of recreating an up to date branch of the same name.)
 
 ``` git push origin --force newbranch:outofdatebranch ```
 
-##### 2. Create a branch locally _and_ remotely 
+Create a branch locally _and_ remotely 
+
 ``` git fetch && checkout -b branch && git push origin branch ```
 
-##### 3. Remove a branch locally _and_ remotely 
+Remove a branch locally _and_ remotely 
 
 ```git branch -d branch && git push origin -d branch ```
 
 
-#### Other
+## Git
 
-##### 4. Completely reset a local repo without having to reclone 
+Completely reset a local repo without having to reclone 
 
 ```git fetch origin && git reset --hard origin/master && git clean -f -d ```
 
@@ -105,10 +116,8 @@ Optionally, checkout (an equally squeaky-clean version of) the branch you were t
 
 ``` git checkout mybranch && git pull && git clean -f -d```
 
+Add a submodule to your repository
 
-#### Submodules
-
-##### 5. Add a submodule to your repository
 After doing this you'll always want to clone your repository recursively using ``` git clone -r``` in order to 
 clone your submodules as well. 
 
@@ -118,7 +127,7 @@ clone your submodules as well.
     git submodule update
 ```
 
-##### 6. Syncing submodules if you forgot to clone recursively
+Syncing submodules if you forgot to clone recursively
 
 Sometimes you forget to use the `--recursive` flag while cloning, or you didn't think the repo had submodules. You can setup the submodules without recloning 
 
@@ -127,9 +136,7 @@ Sometimes you forget to use the `--recursive` flag while cloning, or you didn't 
     git submodule update
 ```
 
-#### Forks
-
-##### 7. Keeping a fork up to date
+Keeping a fork up to date
 
 Forks are the backbone of collaboration on GitHub! If you maintain a fork of a project for long enough that you need to sync with it's upstream, repo look no further:
 
@@ -145,9 +152,7 @@ Then merge with:
 
 ``` git merge upstream/master```
 
-#### Diff Strategies
-
-##### 8. Comparing a local file to it's remote counterpart:
+Comparing a local file to it's remote counterpart:
 
 First make sure you have fetched the details from remote:
 
