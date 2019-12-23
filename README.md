@@ -18,6 +18,16 @@ hugo server -D
 ```
 
 ### GPG
+- Importing a private/public key pair
+```
+gpg --import private.key
+gpg --import public.key
+```
+
+- List imported GPG keys (with key ID)
+```
+gpg --list-keys --keyid-format long
+```
 
 - Trusting a GPG key after importing it from one machine to another
 ```
@@ -33,6 +43,12 @@ docker exec -it CONTAINER_ID /bin/sh
 ```
 
 ### aws-vault
+
+- Add a new profile (after initializing the password store) **Note:** `pass` is fussy with GPG keys, so if you need it to 'just work', uninstall pass, and remove `~/.password_store` to force aws-vault to use its default 'encrypted file' backend.
+
+```
+aws-vault add profilename
+```
 
 - A great example from the aws-vault [repo](https://github.com/99designs/aws-vault) illustrating just how convenient a tool it is.
 ```
