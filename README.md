@@ -1,6 +1,14 @@
 # cheats
 A collection of useful commands I've come to use often. 
 
+## SSH
+
+### Regenerating a public key from a private key
+```bash
+chmod 400 ~/.ssh/id_rsa # If you haven't done so already
+ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
+```
+
 ## GPG
 
 ### Trusting a GPG key after importing it from one machine to another
